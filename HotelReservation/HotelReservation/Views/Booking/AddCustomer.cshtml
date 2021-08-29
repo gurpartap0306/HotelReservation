@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Payment Gateway</h2>
+
+    <form asp-controller="Booking" asp-action="Payment" >
+        <p>Card Type:<p>
+            <input type="radio" id="MasterCard" name="CardType" value="MasterCard">
+            <label for="MasterCard">MasterCard</label><br>
+            <input type="radio" id="Visa" name="CardType" value="Visa">
+            <label for="Visa">Visa</label><br>
+            <input type="radio" id="American Express" name="CardType" value="American Express">
+            <label for="American Express">American Express</label><br><br>
+            <label for="CardNumber">Card Number:</label><br>
+            <input type="text" id="CardNumber" name="CardNumber"><br>
+            <label for="CardHolderName">Card Holder Name:</label><br>
+            <input type="text" id="CardHolderName" name="CardHolderName"><br>
+            <label for="ExpiryDate">Expiry Date:</label><br>
+            <input type="text" id="Expiry date" placeholder="MM/YYYY"><br>
+            <label for="CVV">CVV:</label><br>
+            <input type="text" id="CVV"><br><br>
+            <input type="submit" value="Submit">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to customer table.</p>
+
+</body>
+</html>

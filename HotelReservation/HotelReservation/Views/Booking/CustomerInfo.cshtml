@@ -1,0 +1,59 @@
+﻿@model HotelReservation.Models.Customer1
+
+<!DOCTYPE html>
+<body>
+
+    <div class="container-fluid">
+
+        <h2>Customer Details</h2>
+        <form class="col-12" asp-controller="Booking" asp-action="AddCustomer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="FirstName"></label>
+            <input class="col-6" asp-for="FirstName" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="LastName"></label>
+            <input class="col-6" asp-for="LastName" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="Email"></label>
+            <input class="col-6" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="StreetNo"></label>
+            <input class="col-6" asp-for="StreetNo" />
+            <span asp-validation-for="StreetNo" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="City"></label>
+            <input class="col-6" asp-for="City" />
+            <span asp-validation-for="City" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="Province"></label>
+            <input class="col-6" asp-for="Province" />
+            <span asp-validation-for="Province" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="Country"></label>
+            <input class="col-6" asp-for="Country" />
+            <span asp-validation-for="Country" class="text-danger"></span>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-3" asp-for="PostalCode"></label>
+            <input class="col-6" asp-for="PostalCode" />
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </br>
+            <input class="btn-primary" type="submit" />
+
+        </form>
+
+    </div>
+
+</body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

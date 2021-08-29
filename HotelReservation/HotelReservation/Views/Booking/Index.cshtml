@@ -1,0 +1,67 @@
+﻿@TempData["x"]
+@model HotelReservation.Models.Bookings1
+
+@{
+    ViewData["Title"] = "Booking Room";
+}
+<style>
+    body {
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+</style>
+
+<div class="findroom">
+    <div class="container-fluid">
+        <img src="~/images/logo.png" width="200" />
+        <h1>@ViewData["Title"]</h1>
+
+
+
+        <form class="form-group" asp-controller="Booking" asp-action="SearchRoom" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label class="col-2">Check in date</label>
+            <input name="From" type="date" style="width:400px" class="start_date" asp-for="StartDate" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+            <br />
+            <label class="col-2">Check out date</label>
+            <input name="To" type="date" style="width:400px" class="end_date" asp-for="EndDate" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+            <br />
+
+            <label class="col-2">Loccation</label>
+            <select name="city" style="width:400px">
+                <option value="Toronto">Toronto</option>
+                <option value="New York">New york</option>
+                <option value="Halifax">Halifax</option>
+            </select>
+
+            <br />
+            <label class="col-2">Rooms</label>
+            <input name="room" type="text" style="width:400px" class="room_number" placeholder="Number of rooms" min="1" />
+            <br />
+            <label class="col-2">Guests</label>
+            <input name="guest" type="text" style="width:400px" class="guest_number" placeholder="Number of guests" min="1" asp-for="GuestCount" />
+            <span asp-validation-for="GuestCount" class="text-danger"></span>
+
+            <br />
+            <label class="col-2">Type of Room</label>
+            <select name="type" style="width:400px">
+                <option value="king">1 king bed room</option>
+                <option value="Queen">2 double room</option>
+            </select>
+            <br /><br />
+            <input type="submit" style="width:500px;color:white;background-color:rebeccapurple; font-size:20px" />
+            <br />
+            @if ((string)TempData["DateError"] != "")
+            {
+                <p style="color:red">@TempData["DateError"]</p>
+            }
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

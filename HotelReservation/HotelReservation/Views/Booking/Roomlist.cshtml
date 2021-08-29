@@ -1,0 +1,66 @@
+﻿@{ ViewData["Title"] = "Room list"; }
+
+
+
+<style>
+    body {
+        align-content: center;
+        align-items: center;
+    }
+
+    .roomlist {
+        margin: 0 auto;
+    }
+</style>
+
+
+
+<div class="findroom">
+    <div id="address"></div>
+    @section Scripts{
+        <script src="~/js/address.js" type="text/babel"></script>
+    }
+    @if ((int)TempData["x"] == 0)
+    {
+        @if ((string)TempData["Type"] == "king")
+        {
+            <br />
+            <br />
+            <table class="roomlist" border="1" style="align-content:center;width:1000px">
+                <tr>
+                    <td colspan="2">
+                        <p style="font-size:20px">1 King Bedroom <a style="font-size:15px" asp-area="" asp-controller="Booking" asp-action="KingRoom">Room Detail</a></p>  <img src="~/images/small_king.png" />  <b style="font-size:30px">180 CAD/night</b>
+                                                               
+                        <a asp-controller="Booking" asp-action="CustomerInfo" class="btn-primary">
+                        <input type="button" value="SELECT" style="width:250px;color:white;background-color:rebeccapurple;font-size:20px" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+        }
+        @if ((string)TempData["Type"] == "Queen")
+        {
+            <br />
+            <br />
+            <table class="roomlist" border="1" style="align-content:center;width:1000px">
+                <tr>
+                    <td colspan="2">
+                        <p style="font-size:20px">2 Double Bedroom <a style="font-size:15px" asp-area="" asp-controller="Booking" asp-action="DoubleRoom">Room Detail</a></p>  <img src="/images/small_double.png" />  <b style="font-size:30px">220 CAD/night</b>
+                       
+                       
+                    <a asp-controller="Booking" asp-action="CustomerInfo" class="btn-primary">
+                        <input type="button" value="SELECT" style="width:250px;color:white;background-color:rebeccapurple;font-size:20px" />
+                        </a>
+
+                    </td>
+                </tr>
+            </table>
+
+        }
+    }
+    else
+    {
+        <h2>No Avaliable Room Now</h2>}
+</div>

@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container-fluid">
+    <h1>Booking Confirmation </h1>
+    <h2>Thanks for choosing the Grand Hotel</h2>
+    <br />
+    <br />
+    <br />
+    <li>Booking no: <b>@TempData["BookingId"]</b></li>
+    <br />
+    <br /><br />
+    <li>Check in date: <b>@TempData["StartDate"]</b></li>
+    <br />
+    <li>Check out date: <b>@TempData["EndDate"]</b></li>
+    <br />
+    <li>Total Rooms: <b>@TempData["Room"]</b></li>
+    <br />
+    <li>Total Guests: <b>@TempData["GuestCount"]</b></li>
+    <li>Total Amount:<b>@TempData["Total_Amount"]</b>CAD</li>
+
+    <br /><br /><br /><br />
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+        <input type="button" style="width:500px;color:white;background-color:rebeccapurple; font-size:20px" value="Back to Home" />
+    </a>
+
+</div>

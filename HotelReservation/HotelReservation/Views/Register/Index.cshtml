@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model HotelReservation.Models.Users1
+
+
+<div class="container-fluid">
+    <img src="~/images/logo.png" width="200" />
+    <h1>Sign Up Your Account</h1>
+    <br /><br /><br />
+    <form method="post" asp-controller="Register" asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" style="width:250px" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <br />
+        <label asp-for="ConfirmEmail"></label>
+        <input asp-for="ConfirmEmail" style="width:200px" />
+        <span asp-validation-for="ConfirmEmail" class="text-danger"></span>
+        <br />
+        <label asp-for="Password"></label>
+        <input type="password" asp-for="Password" style="width:250px" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <br /><br />
+        <input type="submit" value="Register" style="width:300px;background-color:rebeccapurple;color:white;font-size:20px" />
+        <br /><br/>
+
+
+    </form>
+</div>
+
+
+@section Scripts{ 
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

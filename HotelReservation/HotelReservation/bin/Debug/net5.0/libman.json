@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "react@17.0.2",
+      "destination": "wwwroot/react/"
+    },
+    {
+      "library": "react-dom@17.0.2",
+      "destination": "wwwroot/react-dom/"
+    },
+    {
+      "library": "babel-standalone@6.26.0",
+      "destination": "wwwroot/babel"
+    }
+  ]
+}
